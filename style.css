@@ -1,0 +1,587 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    background-color: #ede9e9;
+}
+/*sub menu*/
+.options-bar {
+    margin-top: 20px; /* Espacio superior */
+    padding: 15px; /* Espacio interior */
+    background-color: #fff; /* Color de fondo */
+    border: 1px solid #fafbfc; /* Borde */
+    display: flex; /* Usar flexbox para alinear horizontalmente */
+    flex-wrap: wrap; /* Permitir el ajuste en pantallas pequeñas */
+    justify-content: center; /* Centra los elementos */
+    border-top: 1px solid #4c4c4c;
+}
+
+.option-button {
+    margin: 5px; /* Espacio entre botones */
+    padding: 10px 15px; /* Espacio interior del botón */
+    background-color: #f44b1c; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave */
+    border-radius: 15px;
+}
+/*diseño carucel*/
+.slider-container {
+    overflow: hidden;
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    margin: auto;
+}
+.card {
+    min-width: 300px; /* Ancho de cada card */
+    margin-right: 10px; /* Espacio entre las cards */
+}
+.card-img-top {
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Mantiene la relación de aspecto */
+}
+.color{
+    background-color: #ffa200 !important;
+}
+
+/*fin diseño carucel*/
+
+.option-button:hover {
+    background-color: #f44b1c; /* Color de fondo al pasar el ratón */
+    border-radius: 40px !important;
+}
+/*style submenu*/
+.submenu{
+    border: 1px solid #4c4c4c;
+    border-radius: 15px;
+    margin-left: 2px;
+}
+.submenu a:hover{
+    border-radius: 15px;
+}
+/* Navbar Start */
+/* Navbar Start */
+#navbar{
+    background: #fffaed;
+}
+#logo{
+    font-size: 36px;
+    font-weight: 550;
+    color: black;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+}
+#logo .icon-avion {
+    color: inherit;
+    /* Usa el color de la barra de navegación */
+}
+
+/* Color naranja para la primera "I" y la "C" */
+#logo span:first-of-type {
+    color: orange;
+    /* "I" de "IYAI" */
+}
+
+#logo .iyai-text {
+    color: green;
+    /* "YAI" en verde */
+}
+
+#logo .club-text {
+    color: orange;
+    /* "LUB" en verde */
+}
+
+#logo .club-text:first-of-type {
+    color: orange;
+    /* "C" de "CLUB" en naranja */
+}
+  /* Navbar Start */
+  #navbar {
+    background: #fffaed;
+}
+
+#logo {
+    font-size: 36px;
+    font-weight: 550;
+    color: black;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+}
+
+#logo span {
+    color: #008cff;
+}
+
+.icon-avion {
+    font-size: 35px;
+}
+
+.iniciarsession {
+    background-color: green;
+    border-radius: 15px;
+}
+
+.navbar-toggler span {
+    color: #65de53;
+}
+
+.navbar-nav {
+    margin-left: 20px;
+}
+
+.nav-item .nav-link {
+    font-size: 16px;
+    font-weight: 550;
+    color: black;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.nav-item .nav-link:hover, .iniciarsession:hover {
+    background: #ff9500;
+    color: white;
+    border-radius: 15px;
+}
+
+#navbar form button {
+    background: #46a338;
+    color: white;
+    border: none;
+    border-radius: 18px;
+}
+
+/* Navbar End */
+
+/* Home Section Start */
+.home{
+    width: 80%;
+    margin: auto;
+    height: 80vh !important;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url(./imagenes/Mitaddelmundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home .content{
+    text-align: center;
+    padding-top: 200px;
+}
+.home .content h5{
+    color: white;
+    font-size: 38px;
+    font-weight: 550;
+    text-shadow: 0px 1px 1px black;
+}
+.home .content h1{
+    color: white;
+    font-size: 70px;
+    font-weight: 550;
+    text-shadow: 0px 1px 1px black;
+    margin-top: 5px;
+}
+.changecontent::after{
+    content: ' ';
+    color: #ffa500;
+    text-shadow: 0px 1px 1px black;
+    animation: changetext 10s infinite linear;
+}
+@keyframes changetext{
+    0%{content: "Quito";}
+    10%{content: "Guayaquil";}
+    20%{content: "Cuenca";}
+    30%{content: "Baños";}
+    40%{content: "Loja";}
+    50%{content: "Ibarra";}
+    60%{content: "Ambato";}
+    70%{content: "Riobamba";}
+    80%{content: "Latacunga";}
+    90%{content: "Tena";}
+    100%{content: "Isla Galapagos";}
+} 
+.home .content p{
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+.home .content {
+    position: relative;
+    padding: 20px;
+    text-align: center; /* Centra el contenido */
+}
+
+.home .content form {
+    margin-bottom: 20px; /* Espacio inferior para el enlace */
+}
+
+.home .content a {
+    padding: 10px;
+    background: white;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 550;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.5s;
+    display: inline-block; /* Permite que se centre en línea */
+    margin-top: 90px;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5; /* Puedes ajustar el color de fondo */
+}
+
+.content {
+    text-align: center; /* Centra el texto dentro de content */
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-control {
+    margin-right: 10px;
+}
+
+#empezar {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #46a338;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#empezar:hover {
+    background-color: #62e54e;
+}
+
+.home .content a:hover{
+    background: #ffa500;
+    color: white;
+}
+@media (max-width:850px){
+    .home{
+        background-position: 50%;
+    }
+}
+@media (max-width:450px){
+    .home .content h5{
+        font-size: 25px;
+    }
+    .home .content h1{
+        font-size: 38px;
+    }
+    .home .content p{
+        font-size: 13px;
+    }
+}
+/* Home Section End */
+
+/* Section Book Start */
+.book{
+    background: #f9f9f9;
+    padding: 50px;
+}
+.main-text h1{
+    text-align: center;
+    text-shadow: 0px 1px 1px black;
+    font-weight: 600;
+}
+.main-text h1 span{
+    color: #ffa500;
+}
+.book .card{
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px -6px black;
+}
+.book .row{
+    margin-top: 30px;
+}
+.book form input{
+    padding: 10px;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px -6px black;
+}
+.book form textarea{
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    box-shadow: 0px 5px 5px -6px black;
+    height: 200px;
+}
+.book .submit{
+    width: 160px;
+    font-size: 16px;
+    font-weight: 550;
+    background: #ffa500;
+    color: white;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+.book .submit:hover{
+    width: 170px;
+}
+@media (max-width:765px){
+    .book{
+        padding: 0;
+    }
+    .main-text h1{
+        padding: 20px;
+    }
+}
+/* Section Book End */
+
+
+
+
+
+/* Section Packages Start */
+.main-txt h1{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+}
+.main-txt h1 span{
+    color: #ffa500;
+}
+.packages .card{
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+}
+.packages .card img{
+    border-radius: 5px;
+}
+.packages .card .card-body{
+    background: transparent;
+}
+.packages .card .card-body h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+.packages .card .card-body p{
+    font-size: 15px;
+}
+.checked{
+    color: #ffa500;
+}
+.star i{
+    font-size: 15px;
+}
+.packages .card .card-body h6{
+    font-size: 20px;
+}
+.packages .card .card-body a{
+    padding: 10px;
+    text-decoration: none;
+    background: #ffa500;
+    color: white;
+    border-radius: 5px;
+}
+/* Ajustes de la sección */
+.packages .card {
+    height: 100%; /* Asegura que cada tarjeta ocupe toda la altura de la columna */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .packages .card img {
+    width: 100%;
+    height: 200px; /* Tamaño uniforme de las imágenes */
+    object-fit: cover; /* Ajusta la imagen para que se adapte al contenedor */
+  }
+  
+  .packages .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .packages .star {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .packages h6 {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  .packages a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: auto; /* Empuja el enlace hacia la parte inferior */
+    display: block;
+  }
+  
+  .packages .row .col-md-4 {
+    margin-bottom: 20px; /* Espaciado entre tarjetas en dispositivos pequeños */
+  }
+  
+/* Section Packages End */
+/*presentacion*/
+.iyaiclub-text .first-letter {
+    color: orange;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .iyaiclub-text {
+    color: #000; /* Texto en negro */
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+
+
+/* Section Services Start */
+.services{
+    background: #f9f9f9;
+    margin-top: 50px;
+}
+.services .card{
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    border: none;
+    cursor: pointer;
+}
+.services .card i{
+    font-size: 80px;
+    text-align: center;
+    color: #ffa500;
+    margin-top: 20px;
+}
+.services .card .card-body h3{
+    font-weight: 600;
+}
+.services .card .card-body{
+    text-align: center;
+}
+/* Section Services End */
+
+
+
+
+
+/* Section Gallary Start */
+.gallary{
+    margin-top: 50px;
+}
+.gallary .card{
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    cursor: pointer;
+}
+.gallary .card img{
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.gallary .card img:hover{
+    transform: scale(1.1);
+}
+/* Section Gallary End */
+
+
+
+
+/* About Start */
+.about{
+    padding: 50px;
+    margin-top: 50px;
+    background: #f9f9f9;
+}
+.about .card{
+    border-radius: 10px;
+}
+.about .card img{
+    border-radius: 10px;
+}
+.about h2{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.about p{
+    font-weight: 500;
+}
+#about-btn{
+    width: 150px;
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    background: #ffa500;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 550;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#about-btn:hover{
+    width: 170px;
+}
+@media (max-width:765px){
+    .about{
+        padding: 0;
+    }
+}
+/* About End */
+
+
+
+
+/* Footer Start */
+#footer{
+    width: 100%;
+    margin-top: 150px;
+    text-align: center;
+    background: #f9f9f9;
+}
+#footer h1{
+    font-weight: 600;
+    padding-top: 30px;
+    text-shadow: 0px 0px 1px black;
+}
+#footer h1 span{
+    color: #ffa500;
+}
+.social-links i{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: black;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.social-links i:hover{
+    background: #ffa500;
+}
+/* Footer End */

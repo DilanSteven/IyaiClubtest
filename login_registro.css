@@ -1,0 +1,180 @@
+body{
+    background-color: #ede9e9;
+}
+/* Navbar Start */
+#navbar {
+    background: #fffaed;
+}
+
+#logo {
+    font-size: 36px;
+    font-weight: 550;
+    color: black;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+}
+
+#logo span {
+    color: #008cff;
+}
+
+.icon-avion {
+
+    font-size: 35px;
+}
+
+.iniciarsession {
+    background-color: #65de53;
+    border-radius: 15px;
+}
+
+.navbar-toggler span {
+    color: #65de53;
+}
+
+.navbar-nav {
+    margin-left: 20px;
+}
+
+.nav-item .nav-link {
+    font-size: 16px;
+    font-weight: 550;
+    color: black;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.nav-item .nav-link:hover {
+    background: #ff9500;
+    color: white;
+    border-radius: 15px;
+}
+
+#navbar form button {
+    background: #46a338;
+    color: white;
+    border: none;
+    border-radius: 18px;
+}
+
+/* Navbar End */
+.login-container {
+    display: flex;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row-reverse;
+    /* Cambia el orden: imagen a la derecha */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.login-image {
+    width: 50%;
+}
+
+.login-form {
+    padding: 2rem;
+    width: 50%;
+}
+
+/* Diseño responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column-reverse;
+        /* Imagen debajo del formulario en pantallas pequeñas */
+    }
+
+    .login-image,
+    .login-form {
+        width: 100%;
+    }
+}
+
+.custom-recaptcha {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 300px;
+    cursor: pointer;
+}
+
+.custom-recaptcha-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #d3d3d3;
+    border-radius: 2px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.custom-recaptcha-checkbox input {
+    display: none;
+}
+
+.custom-recaptcha-checkbox::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: none;
+    background-color: #4285f4;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 14%, 80% 0, 43% 62%);
+}
+
+.custom-recaptcha-checkbox input:checked+.custom-recaptcha-checkbox::after {
+    display: block;
+}
+
+.custom-recaptcha-label {
+    font-size: 14px;
+    color: #555;
+}
+
+.custom-recaptcha-logo {
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    background: url('https://www.gstatic.com/recaptcha/api2/logo_48.png') no-repeat center center;
+    background-size: contain;
+}
+
+#logo .icon-avion {
+    color: inherit;
+    /* Usa el color de la barra de navegación */
+}
+
+/* Color naranja para la primera "I" y la "C" */
+#logo span:first-of-type {
+    color: orange;
+    /* "I" de "IYAI" */
+}
+
+#logo .iyai-text {
+    color: green;
+    /* "YAI" en verde */
+}
+
+#logo .club-text {
+    color: orange;
+    /* "LUB" en verde */
+}
+
+#logo .club-text:first-of-type {
+    color: orange;
+    /* "C" de "CLUB" en naranja */
+}

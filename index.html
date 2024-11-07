@@ -1,0 +1,727 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iyai Club</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Link -->
+
+
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Icon Windonws -->
+    <link rel="icon" href="./Iconos/logoredondo.png" type="image/x-icon">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+</head>
+<body>
+
+     <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg" id="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" id="logo">
+          <img src="./Iconos/logoredondo.png" alt="Logo" class="icon-avion" style="height: 60px; margin-right: 5px;">
+          <span></span><span class="iyai-text">iyaiclub.com</span> <span class="club-text"></span><span class="club-text" style="color: green !important;"></span>
+      </a>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+              <span><i class="fa-solid fa-bars"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+              <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" href="index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#??"></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#paquetes">Paquetes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#servicios">Servicios</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#galeria">Galeria</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#conocenos">Conocenos</a>
+                  </li>
+              </ul>
+                <a class="nav-link iniciarsession" style="color: beige;" href="./login.html">Iniciar Sesión</a>
+
+          </div>
+      </div>
+  </nav>
+
+  <!-- Navbar End -->
+
+
+
+
+
+    <!-- Home Section Start -->
+    <div class="home">
+        <div class="content">
+            <h5>BIENVENIDO A IYAI CLUB</h5>
+            <h1>Visita <span class="changecontent"></span></h1>
+            <p>Atrevete a viajar sin limites </p>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Hoteles Quito ....">
+              <button class="btn btn-primary" style="background-color: orange !important; border: none;" type="button">Buscar</button>
+          </form>
+            <a href="#book" id="empezar" >Empieza Ya</a>
+        </div>
+    </div>
+    <!-- Home Section End -->
+
+     <!--SubMenu-->
+    <br>
+     <div class="container" style="
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra horizontalmente */
+      justify-content: center; /* Centra verticalmente */
+      text-align: center; /* Centra el texto */
+  ">
+    <ul class="nav nav-pills nav-menu">
+      <li class="nav-item submenu">
+          <a class="nav-link" href="#" onclick="showOptions(event, 'alojamiento')">
+              <i class="fas fa-bed"></i> Alojamiento
+          </a>
+      </li>
+      <li class="nav-item submenu">
+          <a class="nav-link" href="#" onclick="showOptions(event, 'transporte')">
+              <i class="fas fa-bus"></i> Transporte
+          </a>
+      </li>
+      <li class="nav-item submenu">
+          <a class="nav-link" href="#" onclick="showOptions(event, 'agenciaTurismo')">
+              <i class="fas fa-umbrella-beach"></i> Agencia de Turismo
+          </a>
+      </li>
+      <li class="nav-item submenu">
+          <a class="nav-link" href="#" onclick="showOptions(event, 'escapadas')">
+              <i class="fas fa-map-signs"></i> Escapadas
+          </a>
+      </li>
+      <li class="nav-item submenu">
+          <a class="nav-link" href="#" onclick="showOptions(event, 'restaurantes')">
+              <i class="fas fa-utensils"></i> Restaurantes
+          </a>
+      </li>
+  </ul>
+  
+  
+      <div class="options-bar" id="optionsBar">
+          <!-- Opciones se llenarán aquí -->
+      </div>
+      <br>
+  </div>
+
+  
+  <!-- Scripts de Bootstrap y jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  <!--script del submenu-->
+  <script>
+   function showOptions(event, category) {
+    event.preventDefault(); // Evita que la página se desplace al inicio
+
+    let options = [];
+
+    switch (category) {
+        case 'alojamiento':
+            options = [
+                { name: 'Hotel', icon: 'fas fa-hotel' },
+                { name: 'Casas', icon: 'fas fa-home' },
+                { name: 'Fincas', icon: 'fas fa-tree' },
+                { name: 'Villas', icon: 'fas fa-house-user' }
+            ];
+            break;
+        case 'transporte':
+            options = [
+                { name: 'Taxi', icon: 'fas fa-taxi' },
+                { name: 'Bus', icon: 'fas fa-bus' },
+                { name: 'Alquiler de coches', icon: 'fas fa-car' }
+            ];
+            break;
+        case 'agenciaTurismo':
+            options = [
+                { name: 'Tours', icon: 'fas fa-suitcase-rolling' },
+                { name: 'Paquetes', icon: 'fas fa-plane-departure' }
+            ];
+            break;
+        case 'escapadas':
+            options = [
+                { name: 'Escapadas de fin de semana', icon: 'fas fa-weekend' },
+                { name: 'Escapadas de un día', icon: 'fas fa-sun' }
+            ];
+            break;
+        case 'restaurantes':
+            options = [
+                { name: 'Comida rápida', icon: 'fas fa-hamburger' },
+                { name: 'Cocina gourmet', icon: 'fas fa-utensils' }
+            ];
+            break;
+        default:
+            options = [];
+    }
+
+    // Limpia la barra de opciones y añade nuevas
+    const optionsBar = document.getElementById('optionsBar');
+    optionsBar.innerHTML = ''; // Limpia el contenido anterior
+    options.forEach(option => {
+        const button = document.createElement('button');
+        button.className = 'option-button';
+        button.innerHTML = `<i class="${option.icon}"></i>${option.name}`;
+        button.onclick = () => alert(`Has seleccionado: ${option.name}`); // Acción al hacer clic
+        optionsBar.appendChild(button);
+    });
+}
+
+  </script>
+  
+<!--caqrucel de Hoteles-->
+<div class="container mt-5">
+  <div class="main-txt" >
+    <h1 style="text-align: start;"><span>E</span>stancias Sugeridas</h1>
+  </div>
+  <div class="slider-container">
+      <div class="row" id="card-slider">
+          <!-- Las tarjetas se insertarán aquí dinámicamente -->
+      </div>
+  </div>
+  <button id="next" class="btn btn-primary mt-4" style="background-color: green;">Siguiente</button>
+</div>
+
+<!-- JS de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    const cards = [
+        { title: "Hoteles", img: "./imagenesCarucel1/Hoteles.png", description: "Descripción de Hoteles" },
+        { title: "Casas", img: "./imagenesCarucel1/casas.png", description: "Descripción de Casas" },
+        { title: "Restaurantes", img: "./imagenesCarucel1/Restaurantes.png", description: "Descripción de Restaurantes" },
+        { title: "Autos", img: "./imagenesCarucel1/Autos.png", description: "Descripción de Autos" },
+        { title: "Turismo", img: "./imagenesCarucel1/Turismo.png", description: "Descripción de Turismo" },
+        { title: "Escapadas", img: "./imagenesCarucel1/Escapadas.png", description: "Descripción de Escapadas" },
+        { title: "Fincas", img: "./imagenesCarucel1/Finca.png", description: "Descripción de Finca" },
+        { title: "Villas", img: "./imagenesCarucel1/Villa.png", description: "Descripción de Villa" }
+    ];
+    let currentIndex = 0;
+
+const cardSlider = document.getElementById('card-slider');
+
+function updateSlider() {
+    // Limita el número de cards a mostrar a 3
+    const cardsToShow = cards.slice(currentIndex, currentIndex + 3);
+    cardSlider.innerHTML = cardsToShow.map(card => `
+        <div class="col">
+            <div class="card text-center">
+                <img src="${card.img}" class="card-img-top" alt="${card.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${card.title}</h5>
+                    <p class="card-text">${card.description}</p>
+                    <a href="#" class="btn color btn-secondary">Ver más</a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function nextSlide() {
+    // Aumenta el índice y reinicia si llega al final
+    currentIndex = (currentIndex + 1) % (cards.length - 2);
+    updateSlider();
+}
+
+// Configura el avance automático cada 2 segundos
+setInterval(nextSlide, 2000);
+
+// Manejador de eventos para el botón "Siguiente"
+document.getElementById('next').addEventListener('click', nextSlide);
+
+// Inicializa el slider
+updateSlider();
+</script>
+<!--fin del carucel de hoteles-->
+
+<!-- Section Packages Start -->
+<section class="packages" id="paquetes">
+  <div class="container">
+    
+    <div class="main-txt">
+      <h1><span>P</span>aquetes</h1>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="ftsPaquetes/PaqueteQuito.jpg" alt="Quito">
+          <div class="card-body">
+            <h3>Quito</h3>
+            <p>Visita la capital de Ecuador, famosa por su bien conservado centro histórico y la Mitad del Mundo.</p>
+            <div class="star">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h6>Price: <strong>$300</strong> (3 días, 2 noches)</h6>
+            <a href="#book">Adquirir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="ftsPaquetes/PaqueteGalapagos.webp" alt="Galápagos">
+          <div class="card-body">
+            <h3>Galápagos</h3>
+            <p>Explora las islas Galápagos, hogar de una diversidad única de flora y fauna.</p>
+            <div class="star">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h6>Price: <strong>$1,200</strong> (5 días, 4 noches)</h6>
+            <a href="#book">Adquirir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="ftsPaquetes/PaqueteAmazona.webp" alt="Amazonas">
+          <div class="card-body">
+            <h3>Amazonas</h3>
+            <p>Vive la experiencia única de la selva amazónica ecuatoriana y su biodiversidad.</p>
+            <div class="star">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h6>Price: <strong>$450</strong> (4 días, 3 noches)</h6>
+            <a href="#book">Adquirir</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="ftsPaquetes/PaqueteIngapirca.webp" alt="Ingapirca">
+          <div class="card-body">
+            <h3>Ingapirca</h3>
+            <p>Descubre las ruinas de Ingapirca, el sitio arqueológico más importante de Ecuador.</p>
+            <div class="star">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h6>Price: <strong>$150</strong> (1 día)</h6>
+            <a href="#book">Adquirir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="ftsPaquetes/PaqueteBaños.webp" alt="Baños">
+          <div class="card-body">
+            <h3>Baños</h3>
+            <p>Conocido por sus aguas termales y actividades de aventura como rafting y canopy.</p>
+            <div class="star">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h6>Price: <strong>$200</strong> (2 días, 1 noche)</h6>
+            <a href="#book">Adquirir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="ftsPaquetes/PaqueteCuenca.webp" alt="Cuenca">
+          <div class="card-body">
+            <h3>Cuenca</h3>
+            <p>Conocida por su arquitectura colonial y su rica herencia cultural.</p>
+            <div class="star">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h6>Price: <strong>$250</strong> (2 días, 1 noche)</h6>
+            <a href="#book">Adquirir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+      
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="ftsPaquetes/PaqueteChimborazo.webp" alt="Chimborazo">
+          <div class="card-body">
+            <h3>Chimborazo</h3>
+            <p>Admira el majestuoso volcán Chimborazo, el punto más cercano al sol desde el centro de la Tierra.</p>
+            <div class="star">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h6>Price: <strong>$180</strong> (1 día)</h6>
+            <a href="#book">Adquirir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="ftsPaquetes/PaqueteMontañita.webp" alt="Montañita">
+          <div class="card-body">
+            <h3>Montañita</h3>
+            <p>Disfruta de las playas de Montañita, conocidas por su ambiente festivo y deportes acuáticos.</p>
+            <div class="star">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h6>Price: <strong>$220</strong> (2 días, 1 noche)</h6>
+            <a href="#book">Adquirir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="ftsPaquetes/PaquetePailonDiablo.webp" alt="Pailón del Diablo">
+          <div class="card-body">
+            <h3>Pailón del Diablo</h3>
+            <p>Visita esta impresionante cascada cerca de Baños, conocida por su belleza natural y senderos.</p>
+            <div class="star">
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star checked"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h6>Price: <strong>$100</strong> (1 día)</h6>
+            <a href="#book">Adquirir</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- Section Packages End -->
+<!-- Section Services Start -->
+<section class="services" id="servicios">
+  <div class="container">
+
+    <div class="main-txt">
+      <h1><span>S</span>ervicios</h1>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <i class="fas fa-bed"></i> <!-- Ícono para Alojamiento -->
+          <div class="card-body">
+            <h3>Alojamiento</h3>
+            <p>Hoteles / Hostales / Hosterías / Casas / Departamento / Quintas / Villas / Cuartos (Habitaciones)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <i class="fas fa-utensils"></i> <!-- Ícono para Restaurantes -->
+          <div class="card-body">
+            <h3>Restaurantes</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <i class="fas fa-bus"></i> <!-- Ícono para Transporte -->
+          <div class="card-body">
+            <h3>Transporte</h3>
+            <p>Aerolíneas, Buses / Renta de autos / Traslados (Busetas y Autos).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <i class="fas fa-building"></i> <!-- Ícono para Agencias -->
+          <div class="card-body">
+            <h3>Agencias</h3>
+            <p>Agencia de viajes / turismo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <i class="fas fa-spa"></i> <!-- Ícono para Escapadas de momentos -->
+          <div class="card-body">
+            <h3>Escapadas de momentos</h3>
+            <p>Spa / Balnearios, Bares / Discotecas, Museos / Parques temáticos / Zoológicos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <i class="fas fa-tools"></i> <!-- Ícono para Asistencias -->
+          <div class="card-body">
+            <h3>Asistencias</h3>
+            <p>Talleres / Farmacias / Grúas / Atención 24 Horas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Section Services End -->
+
+
+
+
+
+ 
+
+   <!-- Section Book Start -->
+<section class="book" style="background-color: #fff;" id="reserva">
+  <div class="container">
+    <div class="main-text text-center mb-4">
+      <h1><span>R</span>eserva</h1>
+    </div>
+    
+    <div class="row align-items-center">
+      <div class="col-md-6 py-3">
+        <div class="card">
+          <img src="./imagenes/guayaquil.png" alt="Guayaquil" class="card-img-top" style="height: 400px; object-fit: cover;">
+        </div>
+      </div>
+
+      <div class="col-md-6 py-3">
+        <form action="#" class="bg-light p-4 rounded shadow">
+          <h3 class="text-center mb-4">Hacer una Reserva</h3>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="¿A dónde?" required>
+          </div>
+          <div class="mb-3">
+            <input type="number" class="form-control" placeholder="¿Cuántos?" required>
+          </div>
+          <div class="mb-3">
+            <input type="date" class="form-control" placeholder="Llegada" required>
+          </div>
+          <div class="mb-3">
+            <input type="date" class="form-control" placeholder="Salida" required>
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="5" name="details" placeholder="Ingresa tu nombre y detalles"></textarea>
+          </div>
+          <div class="text-center">
+            <input type="submit" style="background-color: green; color: #fff;" value="Reservar Ahora" class="btn btn-primary" required>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section Book End -->
+
+
+
+   <!-- Section Gallery Start -->
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="main-txt text-center mb-4">
+      <h1><span>G</span>aleria</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 py-3">
+        <div class="card">
+          <img src="./imagenes/quito.png" alt="Quito" class="card-img-top img-fluid" style="height: 230px; object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-md-4 py-3">
+        <div class="card">
+          <img src="./imagenes/guayaquil.png" alt="Guayaquil" class="card-img-top img-fluid" style="height: 230px; object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-md-4 py-3">
+        <div class="card">
+          <img src="./imagenes/Banos.png" alt="Baños" class="card-img-top img-fluid" style="height: 230px; object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-md-4 py-3">
+        <div class="card">
+          <img src="./imagenes/cuenca.png" alt="Cuenca" class="card-img-top img-fluid" style="height: 230px; object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-md-4 py-3">
+        <div class="card">
+          <img src="./imagenes/ibarra.png" alt="Ibarra" class="card-img-top img-fluid" style="height: 230px; object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-md-4 py-3">
+        <div class="card">
+          <img src="./imagenes/latacunga.png" alt="Latacunga" class="card-img-top img-fluid" style="height: 230px; object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-md-4 py-3">
+        <div class="card">
+          <img src="./imagenes/riobamba.png" alt="Riobamba" class="card-img-top img-fluid" style="height: 230px; object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-md-4 py-3">
+        <div class="card">
+          <img src="./imagenes/IslaGalapagos.png" alt="Riobamba" class="card-img-top img-fluid" style="height: 230px; object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-md-4 py-3">
+        <div class="card">
+          <img src="./imagenes/Mitaddelmundo.png" alt="Riobamba" class="card-img-top img-fluid" style="height: 230px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section Gallery End -->
+<style>
+  .card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+</style>
+
+
+
+ <!-- About Start -->
+<section class="about" id="conocenos">
+  <div class="container">
+    <div class="main-txt text-center mb-4">
+      <h1>Conoce<span>nos</span></h1>
+    </div>
+
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 py-3">
+        <h2>Misión</h2>
+        <p>Activar el turismo Nacional e Internacional, conjuntamente con nuestros Afiliados, Cámaras de Turismo, Ministerio de Turismo y elevar los servicios y vivencias turísticas en nuestro hermoso país.</p>
+        <button class="btn btn-primary" id="about-btn">Leer más...</button>
+      </div>
+      
+      <div class="col-md-6 py-3">
+        <div class="card">
+          <img src="imagenes/fotomision.webp" alt="Misión" class="card-img-top" style="height: 300px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 py-3">
+        <div class="card">
+          <img src="imagenes/logosinfondo.jpg" alt="Logo" class="card-img-top" style="height: 300px; object-fit: cover;">
+        </div>
+      </div>
+
+      <div class="col-md-6 py-3">
+        <h2>¿Qué es iyaiclub.com?</h2>
+        <p>Es una plataforma web 100% Ecuatoriana para el sector Turístico. Surge con el fin de potenciar el valor añadido a todos los servicios del sector turístico, como (HOTELES, ALQUILERES TEMPORALES, TRANSPORTE, AGENCIAS DE VIAJES, RESTAURANTES, BARES, DISCOTECAS, CENTROS TURÍSTICOS) para así promover y elevar el turismo nacional e internacional, trabajando de la mano con nuestros establecimientos aliados y entes gubernamentales, generando una nueva experiencia para los usuarios y aprovechando al máximo el potencial turístico y gastronómico de nuestro país frente al mundo.</p>
+        <button class="btn btn-primary" id="about-btn">Leer más...</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About End -->
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <footer id="footer">
+      <h1 id="span"><span>I</span>yai <span>C</span>lub</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fugiat, ipsa quos nulla qui alias.</p>
+      <div class="social-links">
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-pinterest-p"></i>
+      </div>
+      <div class="credit">
+        <p>Designed By <a href="#">SA Coding</a></p>
+      </div>
+      <div class="copyright">
+        <p>&copy;Copyright SA Coding. All Rights Reserved</p>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+
+
+
+
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

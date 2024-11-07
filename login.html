@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Icon Windonws -->
+    <link rel="icon" href="./Iconos/logoredondo.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Link -->
+
+
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        body{
+            background-color: #ede9e9;
+        }
+        /* Navbar Start */
+        #navbar {
+            background: #fffaed;
+        }
+
+        #logo {
+            font-size: 36px;
+            font-weight: 550;
+            color: black;
+            text-shadow: 0px 1px 1px black;
+            margin-bottom: 5px;
+        }
+
+        #logo span {
+            color: #008cff;
+        }
+
+
+
+        .iniciarsession {
+            background-color: #65de53;
+            border-radius: 15px;
+        }
+
+        .navbar-toggler span {
+            color: #65de53;
+        }
+
+        .navbar-nav {
+            margin-left: 20px;
+        }
+
+        .nav-item .nav-link {
+            font-size: 16px;
+            font-weight: 550;
+            color: black;
+            letter-spacing: 1px;
+            border-radius: 3px;
+            transition: 0.5s ease;
+            font-family: Arial, Helvetica, sans-serif !important;
+        }
+
+        .nav-item .nav-link:hover {
+            background: #ff9500;
+            color: white;
+            border-radius: 15px;
+        }
+
+        #navbar form button {
+            background: #46a338;
+            color: white;
+            border: none;
+            border-radius: 18px;
+        }
+
+        /* Navbar End */
+        .login-container {
+            display: flex;
+            min-height: 80vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: row-reverse;
+            /* Cambia el orden: imagen a la derecha */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .login-image {
+            width: 50%;
+        }
+
+        .login-form {
+            padding: 2rem;
+            width: 50%;
+        }
+
+        /* Diseño responsivo para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            .login-card {
+                flex-direction: column-reverse;
+                /* Imagen debajo del formulario en pantallas pequeñas */
+            }
+
+            .login-image,
+            .login-form {
+                width: 100%;
+            }
+        }
+
+        .custom-recaptcha {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #d3d3d3;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            max-width: 300px;
+            cursor: pointer;
+        }
+
+        .custom-recaptcha-checkbox {
+            width: 18px;
+            height: 18px;
+            border: 1px solid #d3d3d3;
+            border-radius: 2px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+
+        .custom-recaptcha-checkbox input {
+            display: none;
+        }
+
+        .custom-recaptcha-checkbox::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            display: none;
+            background-color: #4285f4;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 14%, 80% 0, 43% 62%);
+        }
+
+        .custom-recaptcha-checkbox input:checked+.custom-recaptcha-checkbox::after {
+            display: block;
+        }
+
+        .custom-recaptcha-label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .custom-recaptcha-logo {
+            margin-left: auto;
+            width: 24px;
+            height: 24px;
+            background: url('https://www.gstatic.com/recaptcha/api2/logo_48.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        #logo .icon-avion {
+            color: inherit;
+            /* Usa el color de la barra de navegación */
+        }
+
+        /* Color naranja para la primera "I" y la "C" */
+        #logo span:first-of-type {
+            color: orange;
+            /* "I" de "IYAI" */
+        }
+
+        #logo .iyai-text {
+            color: green;
+            /* "YAI" en verde */
+        }
+
+        #logo .club-text {
+            color: orange;
+            /* "LUB" en verde */
+        }
+
+        #logo .club-text:first-of-type {
+            color: orange;
+            /* "C" de "CLUB" en naranja */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" id="logo">
+                <img src="./Iconos/logoredondo.png" alt="Logo" class="icon-avion" style="height: 60px; margin-right: 5px;">
+                <span></span><span class="iyai-text">iyaiclub.com</span> <span class="club-text"></span><span class="club-text" style="color: green !important;"></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#??"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#paquetes">Paquetes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conocenos">Conocenos</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Hoteles Quito ....">
+                    <button class="btn btn-primary" type="button">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar End -->
+    <!--Login-->
+    <div class="container-fluid login-container">
+        <div class="card login-card">
+            <!-- Imagen en el lado derecho -->
+            <div class="login-image">
+                <img src="./ImagenesLogin/Login.png" alt="Login" class="img-fluid"
+                    style="height: 100%; width: 100%; object-fit: cover;">
+            </div>
+
+            <!-- Formulario de login en el lado izquierdo -->
+            <div class="login-form">
+                <h2 class="text-center mb-4">Inicio de Sesión</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="username">Usuario</label>
+                        <input type="text" class="form-control" id="username" placeholder="Ingresa tu usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña"
+                            required>
+                    </div>
+
+                    <!-- Estilo personalizado de "No soy robot" -->
+                    <div class="custom-recaptcha mb-3">
+                        <label class="custom-recaptcha-checkbox">
+                            <input type="checkbox">
+                            <span class="custom-recaptcha-checkbox"></span>
+                        </label>
+                        <span class="custom-recaptcha-label">No soy robot</span>
+                        <div class="custom-recaptcha-logo"></div>
+                    </div>
+
+                    <button type="submit" style="background-color: #ff9500; border: none;" class="btn btn-primary btn-block">Iniciar Sesión</button>
+
+                    <!-- Enlace de registro -->
+                    <div class="text-center mt-3">
+                        <a href="registro.html" class="text-decoration-none">¿No tienes cuenta? Regístrate</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
